@@ -4,14 +4,32 @@
  * @author: yangguoqiang
  * @Date: 2019-01-19 11:37:25
  * @LastEditors: yangguoqiang
- * @LastEditTime: 2019-01-19 15:26:45
+ * @LastEditTime: 2019-01-19 22:35:08
  * @Description:
  */
 
 
-const dbConnection = require('./src/dbInit');
-const User = require('./src/models/users');
-const Product = require("./src/models/product");
+// const dbConnection = require('./src/dbInit');
+// const User = require('./src/models/users');
+// const Product = require("./src/models/product");
+const refermian = require('./src/models/refermian');
+const referfollow = require('./src/models/referfollow');
 
-console.log("建立模型User: ", User);
-console.log("建立带索引的模型", Product);
+
+// console.log("建立模型User: ", User);
+// console.log("建立带索引的模型", Product);
+
+referfollow.belongsTo(refermian, {
+    foreignKey: "pid",
+    targetKey: "pid"
+});
+
+refermian.sync({
+    force: true
+});
+
+setTimeout(() => {
+    referfollow.sync({
+        force: true
+    });
+}, 1000);

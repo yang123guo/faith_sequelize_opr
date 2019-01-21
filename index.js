@@ -4,7 +4,7 @@
  * @author: yangguoqiang
  * @Date: 2019-01-19 11:37:25
  * @LastEditors: yangguoqiang
- * @LastEditTime: 2019-01-19 22:35:08
+ * @LastEditTime: 2019-01-21 23:52:17
  * @Description:
  */
 
@@ -19,6 +19,7 @@ const referfollow = require('./src/models/referfollow');
 // console.log("建立模型User: ", User);
 // console.log("建立带索引的模型", Product);
 
+// 建立从属关系，通过外键
 referfollow.belongsTo(refermian, {
     foreignKey: "pid",
     targetKey: "pid"

@@ -4,7 +4,7 @@
  * @author: yangguoqiang
  * @Date: 2019-01-19 11:54:22
  * @LastEditors: yangguoqiang
- * @LastEditTime: 2019-01-19 15:46:09
+ * @LastEditTime: 2019-01-23 23:36:40
  * @Description:
  */
 
@@ -42,7 +42,6 @@ const product = dbConnection.define('opr_product', {
             unique: true,
             fields: ['pid']
         },
-        /*
         // 名称为jsonb_path_ops,类型为gin
         {
             fields: ['data'],
@@ -69,7 +68,6 @@ const product = dbConnection.define('opr_product', {
                 length: 5
             }]
         }
-        */
     ]
 });
 
